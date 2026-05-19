@@ -1,92 +1,34 @@
-# fastapi-inventory-project
-# FastAPI Inventory Project
+# FastAPI在庫管理API
 
-FastAPI と PostgreSQL を使用して開発した在庫管理 REST API サーバープロジェクトです。
+## 概要
+本プロジェクトは、PythonのFastAPIを使用して作成した在庫管理用のREST APIです。
+商品情報の登録、一覧取得、更新、削除といった基本的なCRUD機能を実装しています。
 
-## Overview
+バックエンド開発の基礎であるAPI設計、データベース連携、Dockerによる開発環境構築を学習する目的で作成しました。
 
-このプロジェクトは、商品の在庫情報を管理するためのバックエンド API サーバーです。  
-CRUD(Create, Read, Update, Delete) 機能を実装し、Docker を利用して開発環境を構築しました。
-
-## Tech Stack
-
+## 使用技術
 - Python
 - FastAPI
 - PostgreSQL
 - SQLAlchemy
 - Docker
 - Docker Compose
+- Git / GitHub
 
-## Features
+## 主な機能
+- 商品情報の登録
+- 商品一覧の取得
+- 商品情報の更新
+- 商品情報の削除
+- PostgreSQLへのデータ保存
+- Swagger UIによるAPI確認
 
-- 商品登録(Create)
-- 商品一覧取得(Read)
-- 商品情報更新(Update)
-- 商品削除(Delete)
-- REST API 実装
-- PostgreSQL データベース連携
-- Docker ベースの開発環境構築
+## 工夫した点
+FastAPIのルーティング、Pydanticによるデータ検証、SQLAlchemyを利用したデータベース操作を分けて実装しました。
+また、Docker Composeを使用することで、アプリケーションとデータベースを同時に起動できるようにしました。
 
-## API Documentation
-
-Swagger UI:
-
-```text
-http://localhost:8000/docs
-```
-
-## Run Project
-
-### Docker 起動
-
-```bash
-docker compose up --build
-```
-
-## Example Request
-
-### Create Item
-
-POST `/items/`
-
-```json
-{
-  "name": "apple",
-  "quantity": 10
-}
-```
-
-### Response
-
-```json
-{
-  "id": 1,
-  "name": "apple",
-  "quantity": 10
-}
-```
-
-## Project Structure
-
-```text
-app/
-├── main.py
-├── database.py
-├── models.py
-├── schemas.py
-├── crud.py
-└── routers/
-```
-
-## Future Improvements
-
-- JWT 認証実装
+## 今後追加したい機能
+- JWT認証機能
 - ユーザー管理機能
-- テストコード追加
-- Render/AWS デプロイ
-- CI/CD パイプライン構築
-
-## Author
-
-GitHub:
-https://github.com/Tatsumakiri# fastapi-inventory-project
+- エラーハンドリングの改善
+- AWSなどのクラウド環境へのデプロイ
